@@ -7,17 +7,7 @@ import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'your_password',  // Вставь свой пароль
-      database: 'kair',
-      entities: [User, Role, Log],
-      synchronize: false,  // Отключаем автоматическое создание таблиц
-      migrations: ['src/migrations/*.ts'],  // Указываем директорию с миграциями
-    }),
+    
   ],
 })
 export class DatabaseModule {

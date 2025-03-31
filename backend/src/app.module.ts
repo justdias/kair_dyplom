@@ -15,7 +15,7 @@ import { Log } from './entities/log.entity';
       envFilePath: '.env',
     }),
     TypeOrmModule.forRoot({
-      type: process.env.DB_TYPE as 'postgres',
+      type: (process.env.DB_TYPE || 'postgres') as any,
       host: process.env.DB_HOST || 'localhost',
       port: parseInt(process.env.DB_PORT || '5432', 10),
       username: process.env.DB_USERNAME || 'postgres',
